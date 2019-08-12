@@ -5,13 +5,20 @@ import { fetchAuthorData } from "../../services/codecademyAPI";
 
 export function* saga() {
   yield takeEvery(GET_COURSES.ACTION, getCourses);
-  yield takeEvery(GET_AUTHORS.ACTION, getCourses);
+  yield takeEvery(GET_AUTHORS.ACTION, getAuthors);
 }
 
 export function* getCourses(action) {
   try {
     yield put({ type: GET_COURSES.PENDING });
-    yield put({ type: GET_COURSES.SUCCESS, courses });
+    let tags = {};
+    courses.default.forEach(course => {
+      course.tags.forEach(tag => {
+        if (!tags[tag]) tags[tag] = 0;
+        tags[tag] += 1;
+      });
+    });
+    yield put({ type: GET_COURSES.SUCCESS, courses, tags });
   } catch (error) {
     yield put({
       type: GET_COURSES.ERROR

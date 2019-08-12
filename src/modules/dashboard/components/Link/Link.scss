@@ -1,0 +1,36 @@
+.dashboard {
+  &__link {
+    display: flex;
+    align-items: center;
+
+    color: white;
+    position: relative;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 0;
+    transition: 0.2s all ease-in-out;
+
+    &:hover {
+      color: rgb(51, 255, 201);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 5px;
+      bottom: 0;
+      width: 0;
+      position: absolute;
+      background-color: rgb(51, 255, 201);
+      transition: 0.2s all ease-in-out;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+
+    & > a {
+      cursor: pointer;
+    }
+  }
+}

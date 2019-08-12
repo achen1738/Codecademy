@@ -1,0 +1,42 @@
+.dashboard {
+  &__tags {
+    &--search {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 4px 9px 2px;
+      height: 100%;
+      border: 2px solid white;
+      border-radius: 3px;
+
+      & > form {
+        display: flex;
+        align-items: center;
+      }
+
+      &-input {
+        height: 100%;
+        color: white;
+        padding-bottom: 2px;
+        border-bottom: 1px solid transparent;
+        font-size: 1.2rem;
+        line-height: 0;
+        &::placeholder {
+          color: rgb(213, 213, 213);
+          font-style: italic;
+        }
+
+        &:focus {
+          border-bottom: 1px solid white;
+        }
+      }
+
+      &-icon {
+        color: white;
+        width: 24px;
+        height: 24px;
+        margin-bottom: 2px;
+      }
+    }
+  }
+}

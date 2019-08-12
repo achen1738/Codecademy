@@ -14,8 +14,18 @@ export const getAuthorsSelector = state => {
   const moduleName = NAME;
   const dashboardState = state[moduleName];
   if (!dashboardState) {
-    return [];
+    return {};
   }
 
   return dashboardState.authors;
+};
+
+export const getTagsSelector = state => {
+  const moduleName = NAME;
+  const dashboardState = state[moduleName];
+  if (!dashboardState) {
+    return {};
+  }
+
+  return dashboardState.tags;
 };

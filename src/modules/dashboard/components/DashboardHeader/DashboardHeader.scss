@@ -1,0 +1,14 @@
+.dashboard__header {
+  background-color: #1a1a1b;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 1.5vw;
+  &--separator {
+    border: 0.5px solid rgb(184, 184, 184);
+
+    height: 50%;
+    margin-right: 18px;
+    margin-left: 15px;
+  }
+}
