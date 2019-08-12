@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { FiSun, FiMoon, FiChevronDown } from "react-icons/fi";
+import React from "react";
+import { FiSun, FiMoon } from "react-icons/fi";
 import "./Darkmode.scss";
 
 const Darkmode = props => {
