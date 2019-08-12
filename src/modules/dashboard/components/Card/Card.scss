@@ -1,13 +1,10 @@
 .dashboard {
   &__card {
-    background-color: #1a1a1b;
-    border: 1px solid #343536;
     cursor: pointer;
     transition: 0.2s all ease-in-out;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    // opacity: 0;
 
     &-transition {
       &-enter {
@@ -16,7 +13,7 @@
 
       &-enter-done {
         opacity: 1;
-        transition: opacity 200ms;
+        transition: opacity 100ms;
       }
 
       &-exit {
@@ -25,12 +22,11 @@
 
       &-exit-done {
         opacity: 0;
-        transition: opacity 200ms;
+        transition: opacity 100ms;
       }
     }
     &:hover {
       transform: translate(0, -5px);
-      border: 1px solid rgb(117, 117, 117);
     }
 
     &--header {
@@ -38,7 +34,6 @@
 
       &-text {
         flex: 1 1 auto;
-        color: white;
         margin-left: 5px;
         display: flex;
         flex-direction: column;
@@ -52,7 +47,6 @@
     }
 
     &--author {
-      color: #afb0b1;
       font-size: 1.4rem;
       font-style: italic;
 
@@ -67,7 +61,6 @@
       width: 35px;
       height: 35px;
       padding: 1px;
-      background-color: white;
       border-radius: 3px;
       display: flex;
       align-items: center;
@@ -81,11 +74,65 @@
 
     &--body {
       flex: 1 1 auto;
-      border-top: 1px solid grey;
       margin-top: 5px;
       padding-top: 5px;
-      color: #d7dadc;
       font-size: 1.4rem;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+.dark .dashboard {
+  &__card {
+    background-color: #1a1a1b;
+    border: 1px solid #343536;
+
+    &:hover {
+      border: 1px solid rgb(117, 117, 117);
+    }
+
+    &--header {
+      &-text {
+        color: white;
+      }
+    }
+
+    &--author {
+      color: #afb0b1;
+    }
+
+    &--image {
+      background-color: white;
+    }
+
+    &--body {
+      border-top: 1px solid grey;
+      color: #d7dadc;
+    }
+  }
+}
+
+.light .dashboard {
+  &__card {
+    box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.25);
+    border-top: 8px solid #204156;
+    &--header {
+      &-text {
+      }
+    }
+
+    &--author {
+    }
+
+    &--image {
+    }
+
+    &--body {
+      border-top: 1px solid black;
     }
   }
 }

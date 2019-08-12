@@ -3,17 +3,12 @@
     &--tag {
       height: 100%;
       padding: 4px;
-      // border: 2px solid transparent;
       border-radius: 3px;
       color: rgb(0, 89, 198);
       font-size: 1.3rem;
       font-weight: 600;
       cursor: pointer;
       text-transform: uppercase;
-
-      &:not(:last-child) {
-        // margin-right: 0px;
-      }
 
       &-container {
         height: 100%;

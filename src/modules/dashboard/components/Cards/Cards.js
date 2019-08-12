@@ -11,7 +11,7 @@ const Cards = props => {
         <CSSTransition
           in={!activeTag || course.tags.includes(activeTag)}
           classNames="dashboard__card-transition"
-          timeout={200}
+          timeout={100}
           key={index}
         >
           <Card
