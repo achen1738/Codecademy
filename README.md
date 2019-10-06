@@ -1,5 +1,4 @@
-A frontend only web-app I made for Codecademy. A simple UI with a light and dark mode that displays cards.
-
+A frontend only web-app I made for Codecademy. A simple UI with a light and dark mode that displays cards. You can view it using this link
 http://tacky-magic.surge.sh/
 
 ### `npm start`
