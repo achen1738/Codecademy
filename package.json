@@ -8,6 +8,7 @@
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
+    "express-graphql": "^0.9.0",
     "graphql": "^15.1.0",
     "graphql-compose": "^7.18.1",
     "graphql-compose-mongoose": "^7.3.8",
@@ -27,7 +28,7 @@
     "redux-saga": "^1.0.5"
   },
   "scripts": {
-    "server": "nodemon server/server.js",
+    "server": "nodemon server/newServer.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm start\"",
     "start": "react-scripts start",

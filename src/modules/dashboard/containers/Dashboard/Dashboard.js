@@ -26,20 +26,15 @@ const Dashboard = (props) => {
   const [authors, setAuthors] = useState({});
 
   const test = async () => {
-    const data = await fetch(
-      "https://s3.us-east-2.amazonaws.com/codecademy-interview/entities.json"
-    );
-    const json = await data.json();
-    // json = { authors: [] }
-    setAuthors(json.authors);
+    console.log("HUR");
+    const data = await axios.get("http://localhost:5000/api/course");
+    console.log(data);
   };
 
   props.courses.forEach((course) => {
     console.log(authors);
     console.log(authors[course.author_id]);
   });
-
-  console.log(authors);
 
   // useEffect(() => {
   //   const fetchData = async () => {
