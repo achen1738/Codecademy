@@ -3,7 +3,6 @@ require("dotenv").config();
 const { CoursesTC, Courses } = require("../schemas/CourseSchema.js");
 
 const {
-  GraphQLSchema,
   GraphQLObjectType,
   GraphQLString,
   GraphQLInt,
@@ -28,7 +27,7 @@ const CourseType = new GraphQLObjectType({
 
 CoursesTC.addResolver({
   name: "getCourse",
-  descriont: "Gets a course based on its slug",
+  description: "Gets a course based on its slug",
   type: CoursesTC,
   args: {
     id: { type: GraphQLInt },
@@ -41,8 +40,18 @@ CoursesTC.addResolver({
 });
 
 CoursesTC.addResolver({
+  name: "getAllCourses",
+  description: "Gets all courses",
+  type: [CoursesTC],
+
+  resolve: async ({ _, __ }) => {
+    return await Courses.find().exec();
+  },
+});
+
+CoursesTC.addResolver({
   name: "addCourse",
-  descriont: "Adds a course object to the courses collection",
+  description: "Adds a course object to the courses collection",
   type: CoursesTC,
   args: {
     id: { type: GraphQLInt },
@@ -64,6 +73,7 @@ CoursesTC.addResolver({
 module.exports = {
   CourseQueries: {
     getCourse: CoursesTC.getResolver("getCourse"),
+    getAllCourses: CoursesTC.getResolver("getAllCourses"),
   },
   CourseMutations: {
     addCourse: CoursesTC.getResolver("addCourse"),
